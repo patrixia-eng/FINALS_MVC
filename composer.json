@@ -1,0 +1,14 @@
+{
+    "name": "patricia/web-final-project",
+    "description": "WEB Final Exam - PHP MVC Framework and Task Manager",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    }
+}
