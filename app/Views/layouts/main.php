@@ -20,7 +20,7 @@
     </main>
 
     <footer>
-        Advanced Web Development - Final Project (Task Manager MVP)
+        MVC NI PAT - TRES lang sir 2026
     </footer>
 </body>
 </html>
