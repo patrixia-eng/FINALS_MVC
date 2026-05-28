@@ -6,11 +6,14 @@ use App\Controllers\HomeController;
 use App\Controllers\ProjectController;
 use App\Controllers\TaskController;
 
+
 /** @var Core\Application $app */
 $router = $app->router();
 
 // Home
 $router->get('/', [HomeController::class, 'index']);
+
+
 
 // Projects CRUD
 
