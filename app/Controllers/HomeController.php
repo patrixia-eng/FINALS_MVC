@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Enums\TaskStatus;
 use App\Repositories\ProjectRepositoryInterface;
 use App\Repositories\TaskRepositoryInterface;
 use Core\Http\Request;
@@ -22,16 +23,25 @@ class HomeController
     {
         $allTasks = $this->tasks->withProject();
 
-        // count pending and overdue for home page
+        // Count task statuses for the home page summary.
         $pendingCount = 0;
+        $completedCount = 0;
         $overdueCount = 0;
         $today = date('Y-m-d');
 
-        foreach ($allTasks as $t) {
-            if ($t['status'] === 'pending') {
+        foreach ($allTasks as $task) {
+            $status = (string) ($task['status'] ?? '');
+            $dueDate = (string) ($task['due_date'] ?? '');
+
+            if ($status === TaskStatus::Pending) {
                 $pendingCount++;
             }
-            if (!empty($t['due_date']) && $t['status'] !== 'completed' && $t['due_date'] < $today) {
+
+            if ($status === TaskStatus::Completed) {
+                $completedCount++;
+            }
+
+            if ($dueDate !== '' && $status !== TaskStatus::Completed && $dueDate < $today) {
                 $overdueCount++;
             }
         }
@@ -40,6 +50,7 @@ class HomeController
             'projectCount' => count($this->projects->all()),
             'taskCount' => count($allTasks),
             'pendingCount' => $pendingCount,
+            'completedCount' => $completedCount,
             'overdueCount' => $overdueCount,
             'recentTasks' => array_slice($allTasks, 0, 5),
         ]);

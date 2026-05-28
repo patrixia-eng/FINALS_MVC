@@ -7,6 +7,7 @@
     <li><strong>Projects:</strong> <?= (int) $projectCount ?></li>
     <li><strong>Tasks:</strong> <?= (int) $taskCount ?></li>
     <li><strong>Pending tasks:</strong> <?= (int) $pendingCount ?></li>
+    <li><strong>Completed tasks:</strong> <?= (int) $completedCount ?></li>
     <li><strong>Overdue tasks:</strong> <?= (int) $overdueCount ?></li>
 </ul>
 
