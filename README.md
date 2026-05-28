@@ -1,6 +1,6 @@
 # WEB Final Project - PHP MVC Framework + Task Manager
 
-**Student:** Patricia  
+**Student:** Pantine Hernando
 **Subject:** Advanced Web Development (SP ELEC 2A)  
 **MVP chosen:** Task Manager (projects, tasks, due dates, status)
 
