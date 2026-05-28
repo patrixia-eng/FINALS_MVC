@@ -1,6 +1,6 @@
 # SOLID Justification
 
-**Name:** Patricia  
+**Name:** Pantine Hernando
 **Project:** PHP MVC Framework + Task Manager
 
 This document explains how I applied the SOLID principles in my final project code.
